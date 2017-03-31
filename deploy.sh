@@ -28,7 +28,7 @@ deploy_container()
 # Switch to the correct cluster
 sudo /opt/google-cloud-sdk/bin/gcloud config set container/cluster $CLUSTER_NAME
 sudo /opt/google-cloud-sdk/bin/gcloud config set compute/zone europe-west1-b
-sudo /opt/google-cloud-sdk/bin/gcloud config set $PROJET_ID
+sudo /opt/google-cloud-sdk/bin/gcloud config set $PROJECT_ID
 sudo /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials $CLUSTER_NAME
 
 printer "Building Release *$CONTAINER_TAG*"
