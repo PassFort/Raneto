@@ -26,13 +26,13 @@ deploy_container()
 }
 
 # Switch to the correct cluster
-sudo /opt/google-cloud-sdk/bin/gcloud config set container/cluster $CLUSTER_NAME
-sudo /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials $CLUSTER_NAME
+sudo /opt/google-cloud-sdk/bin/gcloud config set container/cluster production
+sudo /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials production
 
 printer "Building Release *$CONTAINER_TAG*"
 build_container
 printer "Build completed"
 
-#printer "Deploying Release *$CONTAINER_TAG* to cluster *$CLUSTER* ($CLUSTER_NAME)."
-#deploy_container
-#printer "Deploy completed"
+printer "Deploying Release *$CONTAINER_TAG* to cluster *$CLUSTER* ($CLUSTER_NAME)."
+deploy_container
+printer "Deploy completed"
