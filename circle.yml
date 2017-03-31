@@ -1,0 +1,18 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/gcloud-service-key.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update kubectl
+
+deployment:
+  production:
+    branch: master
+    pre:
+      - pyenv global 2.7.12
+    commands:
+      - ./deploy.sh

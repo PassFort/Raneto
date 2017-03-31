@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: passfort-help-center
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        passfort: help-center 
+    spec:
+      volumes:
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs
+      containers:
+      - name: passfort-help-center
+        image: eu.gcr.io/$PROJECT_ID/passfort-help-center:$CONTAINER_TAG
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80, 433
