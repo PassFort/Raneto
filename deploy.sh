@@ -26,7 +26,7 @@ deploy_container()
 
 # Switch to the correct cluster
 sudo /opt/google-cloud-sdk/bin/gcloud config set container/cluster $CLUSTER_NAME
-sudo /opt/google-cloud-sdk/bin/gcloud config set compute/zone ${CLOUDSDK_COMPUTE_ZONE}
+sudo /opt/google-cloud-sdk/bin/gcloud config set compute/zone $CLOUDSDK_COMPUTE_ZONE
 sudo /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials $CLUSTER_NAME
 
 printer "Building Release *$CONTAINER_TAG*"
