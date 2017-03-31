@@ -16,7 +16,7 @@ build_container()
 {
     printer "Building $CONTAINER_TAG"
     docker build -t eu.gcr.io/$PROJECT_ID/passfort-help-center:$CONTAINER_TAG -f Dockerfile .
-    sudo /opt/google-cloud-sdk/bin/gcloud docker push eu.gcr.io/$PROJECT_ID/passfort-help-center:$CONTAINER_TAG
+    sudo /opt/google-cloud-sdk/bin/gcloud docker -- push eu.gcr.io/$PROJECT_ID/passfort-help-center:$CONTAINER_TAG
 }
 
 deploy_container()

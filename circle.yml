@@ -17,5 +17,6 @@ deployment:
     branch: master
     pre:
       - pyenv global 2.7.12
+      - sudo chmod 744 ~/.kube/config
     commands:
       - ./deploy.sh
