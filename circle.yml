@@ -1,6 +1,9 @@
 machine:
   services:
     - docker
+  environments:
+    CLUSTER_NAME: production
+    CLOUDSDK_COMPUTE_ZONE: europe-west1-b
 
 dependencies:
   pre:
