@@ -5,6 +5,7 @@ export TREE_HASH=`git cat-file -p HEAD`
 export TREE_HASH=${TREE_HASH:5:7}
 export CONTAINER_TAG=$TREE_HASH
 export CLUSTER_NAME=production
+export GOOGLE_APPLICATION_CREDENTIALS=${HOME}/gcloud-service-key.json
 
 printer()
 {
