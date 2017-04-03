@@ -29,6 +29,7 @@ sudo /opt/google-cloud-sdk/bin/gcloud config set container/cluster $CLUSTER_NAME
 sudo /opt/google-cloud-sdk/bin/gcloud config set compute/zone europe-west1-b
 sudo /opt/google-cloud-sdk/bin/gcloud config set project $PROJECT_ID
 sudo /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials $CLUSTER_NAME
+sudo chmod 744 ~/.kube/config
 
 printer "Building Release *$CONTAINER_TAG*"
 build_container
