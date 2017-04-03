@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        passfort: help-center 
+        passfort: passfort-help-center 
     spec:
       volumes:
         - name: ssl-certs
