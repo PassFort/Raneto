@@ -21,7 +21,13 @@ build_container()
 deploy_container()
 {
     printer "Deploying $CONTAINER_TAG"
-    envsubst < passfort-help-center.yaml | kubectl replace --validate=false --record -f - || envsubst < passfort-help-center.yaml | kubectl create --validate=false --record -f -
+    envsubst < help-center-deployment.yaml | kubectl replace --validate=false --record -f - || envsubst < help-center-deployment.yaml | kubectl create --validate=false --record -f -
+}
+
+deploy_service()
+{
+    printer "Deploying service $CONTAINER_TAG"
+    envsubst < help-center-service.yaml | kubectl replace --validate=false --record -f - || envsubst < help-center-service.yaml | kubectl create --validate=false --record -f -
 }
 
 # Switch to the correct cluster
