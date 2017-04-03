@@ -9,13 +9,12 @@ export CLUSTER_NAME=production
 printer()
 {
     echo -e "\033[0;33m$1\033[0m"
-    # echo $1 | slacker -c dev-releases -t xoxp-11239767985-11233063075-26572878627-8d835d7a28
 }
 
 build_container()
 {
     printer "Building $CONTAINER_TAG"
-    docker build -t eu.gcr.io/$PROJECT_ID/passfort-help-center:$CONTAINER_TAG -f Dockerfile .
+    sudo docker build -t eu.gcr.io/$PROJECT_ID/passfort-help-center:$CONTAINER_TAG -f Dockerfile .
     sudo /opt/google-cloud-sdk/bin/gcloud docker -- push eu.gcr.io/$PROJECT_ID/passfort-help-center:$CONTAINER_TAG
 }
 
