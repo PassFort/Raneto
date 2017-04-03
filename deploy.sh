@@ -44,4 +44,5 @@ printer "Build completed"
 
 printer "Deploying Release *$CONTAINER_TAG* to cluster *$CLUSTER_NAME* ($CLUSTER_NAME)."
 deploy_container
+deploy_service
 printer "Deploy completed"
