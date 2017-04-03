@@ -22,7 +22,7 @@ build_container()
 deploy_container()
 {
     printer "Deploying $CONTAINER_TAG"
-    envsubst < passfort-help-center.yaml | kubectl replace --record -f - || envsubst < passfort-help-center.yaml | kubectl create --record -f -
+    envsubst < passfort-help-center.yaml | kubectl replace --validate=false --record -f - || envsubst < passfort-help-center.yaml | kubectl create --validate=false --record -f -
 }
 
 # Switch to the correct cluster
