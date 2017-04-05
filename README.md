@@ -7,6 +7,8 @@ Raneto [![](https://travis-ci.org/gilbitron/Raneto.svg?branch=master)](https://t
 [Raneto](http://raneto.com) is a free, open, simple Markdown powered Knowledgebase for Node.js.  
 [Find out more &rarr;](http://docs.raneto.com/what-is-raneto)  
 
+Test commit
+
 Visit [http://docs.raneto.com](http://docs.raneto.com) to see a demo and get started!
 
 Quickstart
