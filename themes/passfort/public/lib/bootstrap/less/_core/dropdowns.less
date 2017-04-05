@@ -1,0 +1,123 @@
+.btn-group, .dropdown  {
+  .dropdown-menu  {
+    margin:  0;
+    padding: 0;
+    border: 1px solid @gray;
+    .box-shadow(0 0 8px RGBa(0,0,0,0.25));
+    .divider{
+      margin: 0;
+      background-color: darken(@gray-lighter, 5%);
+    }
+    li  {
+      &:first-of-type   {
+        overflow: hidden;
+        border-top-right-radius: @border-radius-base;
+        border-top-left-radius: @border-radius-base;
+      }
+      &:last-of-type   {
+        overflow: hidden;
+        border-bottom-right-radius: @border-radius-base;
+        border-bottom-left-radius: @border-radius-base;
+      }
+      &.dropdown-header {
+        .text-uppercase;
+        .text-muted;
+        padding: 10px 10px 5px;
+      }
+      &.disabled a, &.disabled a:hover  {
+        .text-muted;
+      }
+      a {
+        padding: 6px 10px;
+        border-radius: 0;
+        i {
+          width: 20px;
+          padding-right:5px !important;
+          .text-center;
+        }
+      }
+    }
+  }
+  .dropdown-selector   {
+    li  {
+      &.active  {
+        a   {
+          color: @text-color;
+          background: @gray-lighter;
+          &:hover {
+            color: @text-color;
+            background: @gray-lighter;
+            cursor: default;
+          }
+          i   {
+            color: @brand-primary;
+          }
+        }
+      }
+      a   {
+        &:not(.pre) {
+          padding-left: 30px;
+        }
+        &:first-letter  {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+  }
+  &.open .dropdown-toggle, .dropdown-toggle, .dropdown-toggle:active, .dropdown-toggle:focus {
+    .box-shadow(none);
+    font-weight: bold;
+    text-rendering: geometricPrecision;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 6px;
+    border-radius: 0;
+    background: transparent;
+    border-color: transparent;
+    span  {
+      padding-bottom: 2px;
+      border-bottom: 1px dotted @text-muted;
+    }
+    &:hover  {
+      background: transparent;
+      color: @brand-primary;
+      span  {
+        border-bottom: 1px dotted @brand-primary;
+      }
+      .fa-angle-down {
+        color:@text-color;
+      }
+    }
+    .fa-angle-down {
+      padding-left: 2px;
+      padding-right: 0 !important;
+      vertical-align: middle;
+      color: @text-muted;
+    }
+    &.dropdown-button {
+      .fa-angle-down {
+        padding: 0 !important;
+        vertical-align: initial;
+      }
+    }
+    &:focus, &:active {
+      background: transparent ;
+      border-color: transparent ;
+    }
+  }
+  &.open .dropdown-toggle {
+    color: @brand-primary !important;
+    span  {
+      border-bottom: 1px dotted @brand-primary;
+    }
+    .fa-angle-down {
+      color:@brand-primary;
+    }
+    &:hover {
+      .fa-angle-down {
+        color:@brand-primary !important;
+      }
+    }
+  }
+}

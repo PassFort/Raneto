@@ -1,0 +1,33 @@
+<div class="container-fluid clearfix">
+
+  <ul class="menu col-sm-3">
+    {{#pages}}
+      <li class="category">
+        {{^is_index}}
+          <h5 class="category-title">{{title}}</h5>
+        {{/is_index}}
+        <ul class="pages">
+          {{#files}}
+            <li class="page{{#active}} active{{/active}}"><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+          {{/files}}
+        </ul>
+      </li>
+    {{/pages}}
+  </ul>
+
+  <section class="content col-sm-9">
+    {{#meta.title}}<h1 class="title">{{meta.title}}</h1>{{/meta.title}}
+    {{{content}}}
+    <div class="page-meta clearfix">
+      {{#config.support_email}}
+        <div class="contact-support">
+          <span class="glyphicon glyphicon-envelope"></span> {{lang.page.needHelp}} <a href="mailto:{{config.support_email}}">{{lang.page.getInTouch}}</a>
+        </div>
+      {{/config.support_email}}
+      <div class="last-updated">
+        {{lang.global.lastUpdated}} {{last_modified}}
+      </div>
+    </div>
+  </section>
+
+</div>

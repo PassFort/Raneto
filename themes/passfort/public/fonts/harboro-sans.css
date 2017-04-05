@@ -1,0 +1,139 @@
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2016 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Insigne Design
+ * License URL: https://www.fontspring.com/licenses/insigne/webfont
+ *
+ *
+ */
+
+@font-face {
+	font-family: 'haboro_sansnorm_light';
+    src: url('/fonts/harboro-sans/haborosansnormlight-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormlight-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormlight-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormlight-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormlight-webfont.svg#haboro_sansnorm_light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'haboro_sansnorm_regular';
+    src: url('/fonts/harboro-sans/haborosansnormregular-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormregular-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormregular-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormregular-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormregular-webfont.svg#haboro_sansnorm_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'haboro_sansnorm_medium';
+    src: url('/fonts/harboro-sans/haborosansnormmedium-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormmedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormmedium-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormmedium-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormmedium-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormmedium-webfont.svg#haboro_sansnorm_medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'haboro_sansnorm_medium_italic';
+    src: url('/fonts/harboro-sans/haborosansnormmediumitalic-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormmediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormmediumitalic-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormmediumitalic-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormmediumitalic-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormmediumitalic-webfont.svg#haboro_sansnorm_medium_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+	font-family: 'haboro_sansnormRgIt';
+    src: url('/fonts/harboro-sans/haborosansnormregularitalic-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormregularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormregularitalic-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormregularitalic-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormregularitalic-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormregularitalic-webfont.svg#haboro_sansnormRgIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+	font-family: 'haboro_sansnorm_demi';
+    src: url('/fonts/harboro-sans/haborosansnormdemi-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormdemi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormdemi-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormdemi-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormdemi-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormdemi-webfont.svg#haboro_sansnorm_demi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'haboro_sansnorm_demi_italic';
+    src: url('/fonts/harboro-sans/haborosansnormdemiitalic-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormdemiitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormdemiitalic-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormdemiitalic-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormdemiitalic-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormdemiitalic-webfont.svg#haboro_sansnorm_demi_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+	font-family: 'haboro_sansnorm_book';
+    src: url('/fonts/harboro-sans/haborosansnormbook-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormbook-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormbook-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormbook-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormbook-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormbook-webfont.svg#haboro_sansnorm_book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'haboro_sansnorm_book_italic';
+    src: url('/fonts/harboro-sans/haborosansnormbookitalic-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormbookitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormbookitalic-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormbookitalic-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormbookitalic-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormbookitalic-webfont.svg#haboro_sansnorm_book_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+	font-family: 'haboro_sansnorm_bold';
+    src: url('/fonts/harboro-sans/haborosansnormbold-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormbold-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormbold-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormbold-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormbold-webfont.svg#haboro_sansnorm_bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'haboro_sansnorm_bold_italic';
+    src: url('/fonts/harboro-sans/haborosansnormbolditalic-webfont.eot');
+    src: url('/fonts/harboro-sans/haborosansnormbolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/harboro-sans/haborosansnormbolditalic-webfont.woff2') format('woff2'),
+         url('/fonts/harboro-sans/haborosansnormbolditalic-webfont.woff') format('woff'),
+         url('/fonts/harboro-sans/haborosansnormbolditalic-webfont.ttf') format('truetype'),
+         url('/fonts/harboro-sans/haborosansnormbolditalic-webfont.svg#haboro_sansnorm_bold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+
+
+}
+

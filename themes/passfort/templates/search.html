@@ -1,0 +1,33 @@
+<div class="container-fluid clearfix">
+
+  <ul class="menu col-sm-3">
+    {{#pages}}
+      <li class="category">
+        {{^is_index}}
+          <h5 class="category-title">{{title}}</h5>
+        {{/is_index}}
+        <ul class="pages">
+          {{#files}}
+            <li class="page{{#active}} active{{/active}}"><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+          {{/files}}
+        </ul>
+      </li>
+    {{/pages}}
+  </ul>
+
+  <section class="content search col-sm-9">
+    <h3 class="title">{{lang.search.resultsFor}}: {{search}}</h3>
+    {{#searchResults.length}}
+      {{#searchResults}}
+        <div class="page">
+          <h2 class="page-title"><a href="{{config.base_url}}/{{slug}}">{{title}} {{#category}}<span>({{category}})</a>{{/category}}</h2>
+          <div class="page-excerpt">{{{excerpt}}}</div>
+        </div>
+      {{/searchResults}}
+    {{/searchResults.length}}
+    {{^searchResults.length}}
+      <p class="nothing-found">{{lang.search.noResultsFor}} "{{search}}"</p>
+    {{/searchResults.length}}
+  </section>
+
+</div>

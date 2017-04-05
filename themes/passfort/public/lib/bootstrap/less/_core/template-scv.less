@@ -1,0 +1,85 @@
+
+
+// Address list and location maps
+.location-details {
+  display: flex;
+  .nav-side  {
+    width: 33.33333333%;
+    order: 2;
+  }
+  .tab-content-maps {
+    order: 1;
+    width: 66.66666667%;
+  }
+}
+
+//  Person/company/authorised person information details
+.entity-information  {
+  display: flex;
+  margin-top: 10px;
+  .entity-information-basic  {
+    order: 1;
+    flex-grow: 1;
+    dl  {
+      margin-bottom: 0;
+    }
+  }
+  .scv-logo-container {
+    width: 16.66666667%;
+    order: 2;
+    flex-grow: 0;
+    flex-shrink: 0;
+    .entity-logo  {
+      background: @gray-lighter;
+      padding: 10px;
+      .text-center;
+      h3  {
+        margin: 0;
+        font-size: @font-size-base;
+        font-family: @font-family-base;
+      }
+      img {
+        padding: 10px;
+        margin: 10px 0 0;
+        background: white;
+        height:100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// PEPs & sanctions
+.monitoring-result {
+  .alert {
+    //margin-top: 20px;
+  }
+}
+table.monitoring  {
+  tr {
+    th {
+      strong  {
+        display: block;
+      }
+      .label {
+        margin: 0 5px 0 0;
+        left: auto;
+        bottom: auto;
+      }
+    }
+    td  {
+      .text-danger{
+        i {
+          color: @brand-danger;
+        }
+      }
+    }
+  }
+}
+// KYC
+.kyc-details {
+  .alert {
+    //margin-top: 20px;
+  }
+}
+

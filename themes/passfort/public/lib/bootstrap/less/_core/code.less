@@ -1,0 +1,35 @@
+pre {
+  color: @brand-secondary-darker;
+  background: @brand-secondary-lighter;
+  border: none;
+  padding: 10px 20px;
+}
+kbd {
+  border-radius: @border-radius-base;
+  background: @brand-secondary;
+  padding: 1px 2px;
+  text-rendering: geometricPrecision;
+}
+code  {
+  font-size: 85%;
+  letter-spacing: 0.03em;
+  color: @brand-secondary-darker;
+  background: @brand-secondary-lighter;
+  text-rendering: geometricPrecision;
+  &.success {
+    color: @brand-success-darker;
+    background: @brand-success-lighter;
+  }
+  &.info {
+    color: @brand-info-darker;
+    background: @brand-info-lighter;
+  }
+  &.warning {
+    color: @brand-warning-darker;
+    background: @brand-warning-lighter;
+  }
+  &.danger {
+    color: @brand-danger-darker;
+    background: @brand-danger-lighter;
+  }
+}

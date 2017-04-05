@@ -1,0 +1,51 @@
+<div class="home-search jumbotron container-fluid">
+  <h1>Hi, how can we help?</h1>
+  <form class="navbar-form form-inline" action="{{config.base_url}}/">
+    <div class="form-group">
+      <label class="sr-only" for="home-search">{{lang.home.searchKnowledgeBase}}</label>
+      <input type="search" class="form-control input-lg" name="search" id="home-search" placeholder="{{lang.global.search}} the help centre"><button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i><span>{{lang.global.search}}</span></button>
+    </div>
+  </form>
+</div>
+
+<div class="home-categories">
+  <div class="container-fluid">
+    <div class="row">
+      {{#pages}}
+        {{^is_index}}
+          <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default {{class}}">
+              <h2 class="panel-heading">{{title}}</h2>
+              <ul class="list-group pages">
+                {{#files}}
+                  {{^is_directory}}
+                    <li class="list-group-item page"><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+                  {{/is_directory}}
+                  {{#is_directory}}
+                    <li class="list-group-item page">{{title}}
+                      {{#files}}
+                        <ul>
+                          {{^is_directory}}
+                            <li><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+                          {{/is_directory}}
+                          {{#is_directory}}
+                            <li>{{title}}</li>
+                            <ul>
+                              {{#files}}
+                                <li><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+                              {{/files}}
+                            </ul>
+                          {{/is_directory}}
+                        </ul>
+                      {{/files}}
+                    </li>
+                  {{/is_directory}}
+                {{/files}}
+              </ul>
+            </div>
+          </div>
+        {{/is_index}}
+      {{/pages}}
+    </div>
+  </div>
+</div>

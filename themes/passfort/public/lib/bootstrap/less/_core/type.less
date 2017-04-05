@@ -1,0 +1,95 @@
+::selection {
+    background: @brand-success;
+    color: white;
+    text-shadow: none;
+}
+
+.text-brand     {color: @brand-primary;}
+.text-secondary {color: @brand-secondary;}
+.text-success   {color: @brand-success;}
+.text-warning   {color: @brand-warning;}
+.text-danger    {color: @brand-danger;}
+.text-info      {color: @brand-info;}
+
+h1, h2, h3, h4, h5, h6  {
+  margin-top: 20px;
+  margin-bottom:10px;
+  .bold-text;
+  //font-weight: 600;
+  small {
+    color: @text-muted;
+  }
+}
+
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: @font-size-base;;
+}
+h2, h3, h4, h5, h6  {
+  margin-bottom:10px !important;
+}
+
+.page-header, .section-header  {
+  position: relative;
+  padding-bottom:10px;
+  margin: 0;
+  h1  {
+    margin-bottom: 5px;
+  }
+  h2, h3  {
+    margin-bottom: 5px;
+    font-size: @font-size-medium;
+  }
+  .granular-ui {
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    a   {
+      &.btn-link{
+        color: @text-color;
+        border: none;
+        padding: 8px 0 8px 10px;
+      }
+      i   {
+        padding-right: 5px;
+      }
+    }
+  }
+  .entity-meta  {
+    + .granular-ui  {
+    bottom: 7px;
+    }
+  }
+  .subtitle {
+    margin-bottom: 0;
+  }
+}
+.page-header  {
+  padding-bottom: 20px;
+  border-bottom: 1px solid @table-border-color;
+  .granular-ui  {
+    bottom: 10px;
+  }
+}
+
+
+// Used as entity label (individual/csompany)
+.subtitle {
+  font-family: @headings-font-family;
+  text-transform: uppercase;
+  font-size: @font-size-small;
+  font-weight: normal;
+  letter-spacing: 1px;
+  padding: 0;
+  margin: 0;
+}
+
+strong, b, label, .bold-text  {
+  text-rendering: geometricPrecision;
+  font-weight: bold;
+}

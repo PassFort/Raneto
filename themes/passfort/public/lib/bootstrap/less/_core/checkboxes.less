@@ -1,0 +1,68 @@
+// Checkbox used in ownership panels
+
+  label input[type="checkbox"] ~ i.fa.fa-circle-o {
+    color: fade(@text-color, 15%);
+    display: inline;
+    position: relative;
+    top:2px;
+  }
+  label input[type="checkbox"] ~ i.fa.fa-check-circle-o {
+    display: none;
+  }
+  label input[type="checkbox"]:checked ~ i.fa.fa-circle-o {
+    display: none;
+  }
+  label input[type="checkbox"]:checked ~ i.fa.fa-check-circle-o {
+    color: @brand-primary;
+    display: inline;
+    position: relative;
+    top:2px;
+  }
+  label:hover input[type="checkbox"] ~ i.fa {
+    color: @brand-primary;
+  }
+  div[data-toggle="buttons"] label.active {
+    color: @brand-primary;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div[data-toggle="buttons"]  {
+    position: relative;
+    span {
+      padding-left:5px;
+      color: @text-color;
+      font-weight: bold;
+    }
+  }
+  div[data-toggle="buttons"] label {
+    width:100% !important;
+    display: block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: @line-height-base;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: top;
+    cursor: pointer;
+    background-color: none;
+    border: 0px solid @gray-light;
+    border-radius: @border-radius-base;
+    color: @gray-light;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    .fa   {
+      font-size: 20px;
+    }
+    &:hover {
+      color: @brand-primary;
+      background: transparent;
+    }
+    &:active  {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }

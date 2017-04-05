@@ -1,0 +1,383 @@
+// User case file list & document lists
+.user-case-file-list, .user-document-list  {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid @table-border-color;
+}
+.user-case-file-list  {
+  margin-bottom: 40px;
+  border-bottom: none;
+}
+
+//User case file list item (as seen on applicants/customers page)
+.user-case-file  {
+  margin-bottom: 0;
+  border: 1px solid @table-border-color;
+  border-bottom-color: transparent;
+  &:first-of-type {
+    border-top-left-radius: @border-radius-base;
+    border-top-right-radius: @border-radius-base;
+  }
+  &:last-of-type {
+    border-bottom-left-radius: @border-radius-base;
+    border-bottom-right-radius: @border-radius-base;
+    border-bottom-color: @table-border-color;
+  }
+  &:hover, &.open   {
+    border-color: @gray;
+  }
+  .user-case-file-card  {
+    display: flex;
+    align-items: center;
+    width:100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: transparent;
+    .transition;
+    &:hover, &.open {
+      .track-file a:not(.tracked) {
+        color: @text-muted;
+        &:hover {
+          color:@gray-dark;
+        }
+      }
+    }
+    // Set widths of table content
+    .user-identifier  {
+      width: 40%;
+      padding: 0 20px;
+      .entity-meta  {
+        height: 22px;
+        display: flex;
+        align-items: center;
+        .subtitle   {
+          position: relative;
+          top: 2px;
+          margin-right: 10px;
+
+        }
+      }
+    }
+    .user-status  {
+      width: 20%;
+      padding: 0 20px;
+    }
+    .user-task-button  {
+      width: 17.5%;
+      padding: 0 20px;
+        .btn-stroke  {
+        .text-left;
+        position: relative;
+        i {
+          position: absolute;
+          top:8px;
+          right: 10px;
+          padding-right: 0;
+          .transition;
+        }
+        &:hover {
+          i {
+            &:last-of-type {
+              right: 15px;
+            }
+          }
+        }
+      }
+    }
+    // Quick menu (dropdown) for power users
+    .user-quick-menu {
+      width: 15%;
+      padding: 0 20px;
+      span {
+        .btn  {
+          margin-left: 0 !important;
+          margin-right: 5px;
+        }
+      }
+      .fa-archive {
+        position: relative;
+        left: -1px;
+      }
+      .btn-group  {
+        > span  {
+          display: inline-block;
+          .btn{
+            i {
+              position: relative;
+              top: 1px;
+            }
+          }
+          &:last-of-type {
+            .btn {
+              i.fa-ellipsis-h   {
+                top:0;
+                font-size: 20px;
+                line-height: 14px;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+        &.open  {
+          > .dropdown-menu {
+            //.dropdown-menu-right;
+            margin-top: 4px;
+          }
+          .dropdown-toggle  {
+            color: @brand-primary !important;
+            border: 1px solid @brand-primary !important;
+            box-shadow: 0 0 0 2px @brand-primary !important;
+            &:hover {
+              color: @brand-primary !important;
+              border: 1px solid @brand-primary !important;
+              background: transparent !important !important;
+            }
+          }
+        }
+      }
+    }
+    .user-expand-content  {
+      width: 7.5%;
+      padding: 0 20px 0 0;
+      .text-right;
+      .btn-caret-expand {
+        background: transparent;
+        color: @text-color;
+        font-size: @font-size-medium;
+        &:hover, &:active, &:focus {
+          color: @text-color;
+          background: transparent;
+        }
+        .btn-caret-expand-down {
+          display: block;
+        }
+        .btn-caret-expand-up {
+          display: none;
+        }
+        &.on  {
+          .btn-caret-expand-down {
+            display: none;
+          }
+          .btn-caret-expand-up {
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+  // Expanding footer for business applicants/customers
+  [class^="user-case-file-card-list"] {
+    .list-unstyled;
+    border-bottom-left-radius: @border-radius-base;
+    border-bottom-right-radius: @border-radius-base;
+    overflow: hidden;
+    .user-case-file-card-list-item   {
+      display: flex;
+      align-items: center;
+      width:100%;
+      padding: 15px 0;
+      background: @gray-lighter;
+      border-top: 1px solid darken(@table-border-color, 1%);
+      &:hover {
+        background: @gray-lighter;
+        .track-file a :not(.tracked) {
+          color: @text-muted;
+          &:hover {
+            color:@gray-dark;
+          }
+        }
+      }
+      > div {
+        width: 55%;
+        padding: 0 20px;
+        &:last-of-type  {
+          width: 45%;
+        }
+      }
+    }
+  }
+  .user-meta  {
+    display: inline-block;
+    // Display entity info
+    .page-header  {
+      border-bottom: 0;
+      padding: 0;
+      margin: 0;
+      h2 {
+        font-size: @font-size-medium;
+        margin-top: 0;
+        margin-bottom: 2px;
+      }
+      h3  {
+        margin: 0 0 2px;
+        font-size: @font-size-base;
+      }
+      h2 a, h3 a   {
+        color: @text-color;
+        border-bottom: 2px solid transparent;
+        text-decoration: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &:hover {
+          border-bottom: 2px solid @text-color;
+        }
+      }
+    }
+  }
+  .user-status  {
+    color: @brand-info;
+    p {
+      margin: 0;
+      i {
+        padding-right:5px;
+      }
+      &.text-danger  {
+        i   {
+          .text-danger;
+        }
+      }
+      &.text-warning  {
+        i   {
+          .text-warning;
+        }
+      }
+      &.text-info  {
+        i   {
+          .text-info;
+        }
+      }
+      &.text-success  {
+        i   {
+          .text-success;
+        }
+      }
+    }
+  }
+}
+
+// User document table
+.user-document-list  {
+  // Submitted document overview list item
+  .user-document    {
+    &:first-of-type {
+      .user-document-card-summary {
+        border-top: none;
+      }
+    }
+    // Submitted document summary details
+    .user-document-card-summary  {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      list-style: none;
+      border-top: 1px solid @table-border-color;
+      border-bottom: none;
+      background: transparent;
+      .clearfix;
+      &:hover, &.open {
+        background: @gray-lighter;
+      }
+      > div {
+        .make-lg-column(2);
+        &:not(:nth-of-type(5))  {
+          padding-top: 9px;
+          padding-bottom:9px;
+        }
+        &:first-of-type   {
+          font-weight: bold;
+        }
+        &.date  {
+          .make-lg-column(3);
+        }
+        &.result  {
+          .make-lg-column(3);
+          &.warning {
+            color: @brand-warning;
+          }
+          &.success {
+            color: @brand-success;
+          }
+          &.info{
+            color: @brand-info;
+          }
+          &.danger {
+            color: @brand-danger;
+          }
+        }
+      }
+    }
+    // Submitted document full details
+    .user-document-card-details  {
+      .alert{
+        margin: 10px 20px 0;
+      }
+      .clearfix;
+      padding: 10px 20px 20px;
+      border-top: 1px solid @table-border-color;
+      background: darken(@gray-lighter, 1%);
+      .user-document-card-details-extracted  {
+        .make-lg-column(6);
+        h4  {
+          a   {
+            font-family: @font-family-base;
+            font-weight: normal;
+            font-size: @font-size-base;
+          }
+        }
+        dl  {
+          padding: 20px 0 10px;
+          margin-bottom: 0;
+          border-bottom: 1px solid @table-border-color;
+          &:first-of-type {
+            padding-top: 0;
+          }
+          &:last-of-type  {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+      }
+      .user-document-card-details-images  {
+        .make-lg-column(6);
+        .image-container  {
+          .make-lg-column(6);
+        }
+      }
+      .user-document-card-details-checks  {
+        display: none;
+      }
+    }
+    .user-document-card-details-unverified {
+      .user-document-card-details-images  {
+        .make-lg-column(12);
+        .image-container  {
+          .make-lg-column(3);
+        }
+      }
+    }
+  }
+}
+
+.status-label {
+  border-radius: 50px;
+  padding: 1px 6px 1px 4px;
+  color: white;
+  i {
+    padding-right: 0px;
+    color: white;
+  }
+  &.success   {
+    .bg-success;
+  }
+  &.warning   {
+     .bg-warning;
+  }
+    &.danger   {
+    .bg-danger;
+  }
+  &.info  {
+     .bg-info;
+  }
+}

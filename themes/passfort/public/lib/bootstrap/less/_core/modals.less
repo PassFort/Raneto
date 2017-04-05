@@ -1,0 +1,281 @@
+// Position dialog from edges of screen
+.modal-dialog {
+  margin-top: 40px;
+  border-radius: @border-radius-base;
+  overflow: hidden;
+}
+// Modal window
+.modal-content {
+  border: none;
+  .box-shadow(0 0px 8px RGBa(0,0,0,0.25));
+  border-radius: @border-radius-base;
+  padding:  0;
+}
+// Modal header
+.modal-header {
+  border-bottom: 2px solid @gray-light;
+  padding: 0;
+  background: @gray-lighter;
+  border-top-right-radius: @border-radius-base;
+  border-top-left-radius: @border-radius-base;
+  .modal-title  {
+    padding: 20px;
+    margin: 0;
+  }
+  .nav-tabs {
+    margin-top: -9px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+// Modal body
+.modal-body {
+  padding:20px;
+  .table  {
+    margin-bottom: 20px;
+  }
+}
+// Modal footer (for actions)
+.modal-footer {
+  border-top: none;
+  padding: 10px 20px;
+  background: @gray-lighter;
+  border-bottom-left-radius: @border-radius-base;
+  border-bottom-right-radius: @border-radius-base;
+  border-top: 1px solid @gray-light;
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 10px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+// Small modal
+.modal-sm {
+  .modal-body {
+    padding: 10px 20px;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+// Medium modal
+.modal-md  {
+  .modal-footer {
+    small   {
+      .pull-left;
+      padding-top:9px;
+    }
+  }
+  .modal-body {
+    > p:first-of-type  {
+      margin-bottom: 20px;
+    }
+    .tab-content  {
+      > div {
+        max-height: 200px;
+        overflow-y: scroll;
+        margin-top: 10px;
+        p   {
+          padding: 20px;
+          background: @gray-lighter;
+        }
+        ul  {
+          .list-unstyled;
+          li {
+            .make-lg-column(6);
+            padding: 10px;
+            background: @gray-lighter;
+            border-right: 5px solid white;
+            border-bottom: 5px solid white;
+            span   {
+              .pull-right;
+              font-size: @font-size-tiny;
+              text-transform: uppercase;
+              padding-top: 4px;
+              i   {
+                padding-right:3px;
+              }
+              &.success {
+                color: @brand-primary;
+              }
+              &.warning {
+                color: @brand-warning;
+              }
+              &.danger {
+                color: @brand-danger;
+              }
+            }
+            &:nth-of-type(2n) {
+              border-right: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large modal
+.modal-lg {
+  .modal-header  {
+    border-bottom: none;
+    .modal-title{
+      position: relative;
+      .label{
+        //position: absolute;
+        //top:25px;
+        //right:20px;
+        //left: auto;
+        //bottom: auto;
+        //padding: 3px 3px 2px;
+      }
+    }
+    .btn-group  {
+      position: absolute;
+      right:10px;
+      top:57px;
+    }
+  }
+  .modal-body {
+    //padding-top: 10px;
+    height: calc(~"100vh - 270px");
+    overflow-y: scroll;
+    #peps {
+      .table  {
+        margin-bottom: 0;
+        tr  {
+          &.historical  {
+            .text-muted;
+            i {
+              .text-muted;
+            }
+            td  {
+              a {
+                i {
+                  .btn-link;
+                }
+                &:hover {
+                  i {
+                    color:#507901;
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #sanctions  {
+      .table{
+        margin-bottom: 0;
+        tr, th, td  {
+          vertical-align: top !important;
+          white-space: nowrap;
+          &.text-muted img  {
+            opacity: 0.5;
+          }
+          .text-danger  {
+            i {
+              color: @brand-danger !important;
+            }
+          }
+          span  {
+            display: block;
+            margin-bottom: 30px;
+            &:last-of-type  {
+              margin-bottom: 0;
+            }
+            &.historical  {
+              .text-muted;
+              i {
+                .text-muted;
+              }
+            }
+          }
+        }
+        th  {
+          max-width: 300px;
+          span  {
+            max-width: 300px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: auto;
+          }
+        }
+      }
+    }
+    #associates {
+      table   {
+        margin-bottom: 0;
+        span  {
+          &.historical  {
+            .text-muted;
+            i   {
+              padding-right: 5px;
+              .text-muted;
+            }
+          }
+          &.current {
+            .text-warning;
+            i {
+              padding-right: 5px;
+              .text-warning;
+            }
+          }
+        }
+      }
+    }
+    #aliases {
+      .alert   {
+        margin-top: 20px;
+      }
+      h5  {
+        &:first-of-type {
+          margin-top: 10px;
+        }
+      }
+      span  {
+        .bg-gray-light;
+        display: inline-block;
+        padding: 2px 6px;
+        margin-right: 2px;
+        margin-bottom: 3px;
+        border-radius: @border-radius-base;
+      }
+    }
+    #notes  {
+      article {
+        width: 40em;
+        font-size: 16px;
+        margin:  0 auto;
+        border-bottom: 1px solid @table-border-color;
+        padding-bottom: 10px;
+        &:last-of-type  {
+          border: none;
+          padding-bottom: 0;
+        }
+        &:first-of-type {
+          h5  {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+  .modal-footer {
+    div[data-toggle="buttons"] label  {
+      padding-left: 0;
+    }
+  }
+}

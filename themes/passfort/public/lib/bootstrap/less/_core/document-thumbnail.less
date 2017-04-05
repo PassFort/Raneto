@@ -1,0 +1,35 @@
+// Document thumbnails
+.image-gallery  {
+  > div {
+    margin-bottom:30px;
+  }
+  a {
+    display: block;
+    position: relative;
+    img {
+      width:100%;
+      max-height:auto;
+    }
+    figcaption  {
+      width: 100%;
+      padding: 10px 14px;
+      background: fade(@brand-secondary, 90%);
+      position: absolute;
+      bottom: 0;
+      left:0;
+      .image-expand {
+        .pull-right;
+        color: fade(@gray-lighter, 50%);
+      }
+    }
+    &:hover {
+      color: @brand-primary;
+      figcaption  {
+        .image-expand {
+          color: @gray-lighter;
+        }
+        text-decoration: underline;
+      }
+    }
+  }
+}

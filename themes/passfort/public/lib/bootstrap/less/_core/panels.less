@@ -1,0 +1,35 @@
+
+.panel {
+  padding:10px 20px 15px;
+  margin: 0 0 40px;
+  background: @gray-lighter;
+  border: none;
+  box-shadow: none;
+  border-radius: @border-radius-base;
+  .panel-heading  {
+    .subtitle;
+    color: @text-color;
+    padding: 0 0 10px;
+    margin: 10px 0;
+    background: transparent;
+    font-size: @font-size-small;
+    border-bottom: 1px solid darken(@table-border-color, 4%);
+  }
+  > ul.list-group {
+    li.list-group-item  {
+      background: transparent;
+      border: transparent;
+      padding: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      a   {
+        .btn;
+        padding-left: 0;
+        padding-right:0;
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+  }
+}

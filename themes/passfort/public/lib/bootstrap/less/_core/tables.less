@@ -1,0 +1,92 @@
+.table  {
+  margin-bottom: 0;
+  border-bottom: 1px solid @table-border-color;
+  // Table header
+  thead {
+    border-bottom: 2px solid @table-border-color;
+    tr > th  {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom-width: 1px;
+      .bold-text;
+      .text-muted;
+    }
+  }
+  // Table body
+  tr  {
+    th  {
+      .bold-text;
+    }
+    th, td  {
+      vertical-align: middle !important;
+      p   {
+        margin: 0;
+      }
+      h3  {
+        margin: 0 0 2px;
+        padding: 0;
+        font-size: @font-size-medium;
+        a {
+          color: @text-color;
+          display: inline-block;
+          border-bottom: 2px solid transparent;
+          text-decoration: none;
+          margin-bottom: 0px;
+          &:hover {
+            border-bottom: 2px solid @text-color;
+          }
+        }
+      }
+      i   {
+        padding-right: 5px;
+      }
+      span.text-muted {
+        i   {
+          .text-muted;
+        }
+      }
+    }
+    &.selected-row {
+      background: fade(@brand-primary, 7.5%);
+      &:hover {
+        background: fade(@brand-primary, 12.5%);
+      }
+    }
+  }
+}
+
+// Faux tables
+
+// Case file table titles
+.faux-table-title  {
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 2px solid @table-border-color;
+  .text-muted;
+  .clearfix;
+  span  {
+    font-weight: bold;
+  }
+  &.table-title-user-case-file-list {
+    span  {
+      .make-lg-column(3);
+      &:first-of-type {
+        .make-lg-column(6);
+        padding-left:60px;
+      }
+    }
+  }
+&.table-title-user-document-list {
+    span  {
+      .make-lg-column(2);
+      padding-left: 20px;
+      padding-right: 20px;
+      &:nth-of-type(3)  {
+        .make-lg-column(3);
+      }
+      &:nth-of-type(4)  {
+        .make-lg-column(4);
+      }
+    }
+  }
+}

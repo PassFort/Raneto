@@ -1,0 +1,96 @@
+// Colour background classes for all the colour variants
+// Core
+.bg-primary             {background: @brand-primary;}
+.bg-secondary           {background: @brand-secondary; color: white;}
+// Core variants
+.bg-primary-lighter     {background: @brand-primary-lighter;}
+.bg-primary-light       {background: @brand-primary-light;}
+.bg-primary-dark        {background: @brand-primary-dark}
+.bg-primary-darker      {background: @brand-primary-darker}
+.bg-secondary-lighter   {background: @brand-secondary-lighter;}
+.bg-secondary-light     {background: @brand-secondary-light;}
+.bg-secondary-dark      {background: @brand-secondary-dark}
+.bg-secondary-darker    {background: @brand-secondary-darker}
+// Status
+.bg-success             {background: @brand-success; color: white;}
+.bg-info                {background: @brand-info; color: white;}
+.bg-warning             {background: @brand-warning; color: white;}
+.bg-danger              {background: @brand-danger; color: white;}
+// Status variants
+.bg-success-lighter     {background: @brand-success-lighter;}
+.bg-success-light       {background: @brand-success-light;}
+.bg-success-dark        {background: @brand-success-dark}
+.bg-success-darker      {background: @brand-success-darker}
+.bg-info-lighter        {background: @brand-info-lighter;}
+.bg-info-light          {background: @brand-info-light;}
+.bg-info-dark           {background: @brand-info-dark}
+.bg-info-darker         {background: @brand-info-darker}
+.bg-warning-lighter     {background: @brand-warning-lighter;}
+.bg-warning-light       {background: @brand-warning-light;}
+.bg-warning-dark        {background: @brand-warning-dark}
+.bg-warning-darker      {background: @brand-warning-darker}
+.bg-danger-lighter      {background: @brand-danger-lighter;}
+.bg-danger-light        {background: @brand-danger-light;}
+.bg-danger-dark         {background: @brand-danger-dark}
+.bg-danger-darker       {background: @brand-danger-darker}
+// Greys
+.bg-white               {background: white;}
+.bg-gray-lighter        {background: @gray-lighter;}
+.bg-gray-light          {background: @gray-light;}
+.bg-gray                {background: @gray; color: white;}
+.bg-gray-dark           {background: @gray-dark; color: white;}
+.bg-gray-darker         {background: @gray-darker; color: white;}
+.bg-clear               {background: transparent !important;}
+
+
+.transition {transition: all 0.15s ease;}
+.transition-long {transition: all 0.3s ease;}
+
+.alert-dot  {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  .bg-danger;
+  position: relative;
+  left:2px;
+  top:-6px;
+  border-radius: 50%;
+}
+
+#undo {
+  position: fixed;
+  bottom: 40px;
+  left:40px;
+  background: @gray-darker;
+  padding: 11px 7px 11px 20px;
+  .box-shadow(0 0px 8px RGBa(0,0,0,0.25));
+  margin: 0;
+  p {
+    margin: 0;
+    display: inline;
+  }
+  .dismiss {
+    i {
+      color: @gray-dark !important;
+    }
+    &:hover {
+      i {
+        color: white !important;
+      }
+    }
+  }
+}
+
+// Removeall padding from an element
+.no-pad {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+
+.user-case-files  {
+  .granular-ui{
+    bottom: 16px;
+  }
+}

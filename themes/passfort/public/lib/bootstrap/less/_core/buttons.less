@@ -1,0 +1,554 @@
+.input-data-button  {
+  display: block;
+  margin-left: 40px;
+  margin-top: 20px;
+  padding: 20px 0px 10px;
+  border-top: 1px solid @table-border-color;
+  .text-muted;
+  .bold-text;
+  &:hover, &:active, &:focus   {
+    color: @text-color;
+    .bold-text;
+    text-decoration: none;
+  }
+}
+
+.btn-primary  {
+  &:hover, &:active, &:focus   {
+    background: @brand-primary;//@text-color;
+    border-color: mix(white, @brand-primary, 50%);
+    box-shadow: 0 0 0 2px mix(white, @brand-primary, 50%);
+  }
+}
+
+// Buy button
+.btn-buy {
+  .btn-stroke;
+  .text-center;
+  border-color: @brand-primary;
+  display: block;
+  padding: 0;
+  transition: all 0.3s ease;
+  border-radius: @border-radius-base;
+  // Default view
+  .price   {
+    .btn;
+    .btn-block;
+    overflow: hidden;
+    color: @brand-primary;
+    transition: all 0.3s ease;
+    &:hover   {
+      color: @brand-primary;
+    }
+  }
+  // Offer button to buy
+  .prompt  {
+    display: none;
+  }
+  // Download purchsed file
+  .download  {
+    display: none;
+  }
+  // Purchase complete, file downloaded and available
+  .view  {
+    display: none;
+  }
+  i  {
+    padding-right: 0 !important;
+  }
+  &:hover   {
+    box-shadow: 0 0 0 2px @brand-primary;
+  }
+  &.buy   {
+    .price  {
+      display: none;
+    }
+    .prompt  {
+      .btn;
+      .btn-block;
+      overflow: hidden;
+      color: @brand-primary;
+      transition: all 0.3s ease;
+      &:hover   {
+        color: @brand-primary;
+      }
+    }
+  }
+  &.download  {
+    border-color: @brand-primary !important;
+    box-shadow: none;
+    .price, .prompt, .view   {
+      display: none !important;
+    }
+    .download   {
+      .btn;
+      .btn-block;
+      overflow: hidden;
+      color: @brand-primary;
+      transition: all 0.3s ease;
+      cursor: default;
+      &:hover   {
+        color: @brand-primary;
+      }
+    }
+  }
+  &.purchased   {
+    border-color: transparent;
+    &:hover   {
+      box-shadow: none !important;
+    }
+    .price, .prompt   {
+      display: none !important;
+    }
+    .view   {
+      .btn;
+      .btn-block;
+      .btn-primary;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+// Decision button
+.btn-decision-wrapper {
+  border-radius: 50px;
+  display: inline-block;
+  background: transparent;
+  .btn-group.btn-decision  {
+    display: flex;
+    border-radius: 50px;
+    width: 120px;
+    margin-right:0;
+    background: transparent;
+    border: 1px dashed @brand-success;
+    transition: all ease 0.3s;
+    &:hover {
+      background: @brand-success-lighter;
+      border: 1px solid @brand-success;
+      box-shadow: 0 0 0 2px @brand-primary;
+    }
+    #btn-decision-button  {
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      border: none;
+      background: transparent;
+      margin-right: 0;
+      padding-left: 15px;
+      flex-grow: 1;
+      transition: all ease 0.3s;
+      .text-left;
+      .signal-default {
+        color: @brand-success;
+      }
+      .signal-approved, .signal-escalated, .signal-rejected  {
+        display: none;
+      }
+    }
+    #btn-decision-changer {
+      // Dropdown for more approval actions
+      .dropdown-toggle {
+        background: transparent;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border: none;
+        padding: 6px;
+        span  {
+          //color: white;
+          background: @brand-success;
+          border-radius: 50%;
+          border: none;
+          height:20px;
+          width: 20px;
+          display: block;
+          padding-bottom: 0;
+          i {
+            color: white !important;
+            padding: 0;
+          }
+        }
+        &:hover   {
+          span  {
+            background: @brand-success-dark;
+          }
+        }
+      }
+      &.open  {
+        .btn-first-of-type  {
+          padding-left: 5px;
+        }
+        .dropdown-menu {
+          margin-top: 2px;
+          a   {
+            cursor: pointer;
+          }
+        }
+        .dropdown-toggle  {
+          span  {
+            background: @brand-success-dark;
+          }
+          &:hover, &:hover:active, &:active, &:focus   {
+            span  {
+              i   {
+                color: white !important;
+              }
+            }
+          }
+        }
+      }
+      // Hide reset button until we need it
+      #btn-decision-changer-reset    {
+        display: none;
+      }
+    }
+    &.approved  {
+      background: @brand-success;
+      #btn-decision-button  {
+        cursor: default;
+        .signal-approved  {display: inline-block; color: white;}
+        .signal-default   {display: none; }
+      }
+    }
+    &.escalated   {
+      background: @brand-warning;
+      #btn-decision-button  {
+        cursor: default;
+        .signal-escalated  {display: inline-block; color: white;}
+        .signal-default   {display: none; }
+      }
+    }
+    &.rejected  {
+      background: @brand-danger;
+      #btn-decision-button  {
+        cursor: default;
+        .signal-rejected  {display: inline-block;  color: white;}
+        .signal-default   {display: none; }
+      }
+    }
+    &.approved, &.escalated, &.rejected {
+      border: 1px solid transparent;
+      &:hover {
+        border: 1px solid transparent;
+        box-shadow: none;
+      }
+      #btn-decision-changer {
+        // Hide Dropdown toggle
+        .dropdown-toggle {
+          display: none;
+        }
+        // Show reset button
+        #btn-decision-changer-reset    {
+          display: inline-block;
+          background: transparent;
+          border-top-right-radius: 50px;
+          border-bottom-right-radius: 50px;
+          border: none;
+          padding: 6px;
+          span  {
+            background: white;
+            border-radius: 50%;
+            border: none;
+            height:20px;
+            width: 20px;
+            display: block;
+            padding-bottom: 0;
+            transition: all 0.3s ease;
+            i {
+              color: @text-color !important;
+              padding: 0;
+              position: relative;
+              top: 1px;
+            }
+          }
+          &:hover   {
+            span  {
+              box-shadow: 0 0 0 2px white !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Go back button on SCV headers
+.btn-back {
+  .btn;
+  border-left: none;
+  border-right-color: @table-border-color;
+  border-radius: 0;
+  margin-right: 10px;
+  padding: 8px 10px 4px 0;
+  i {
+    padding-right: 5px;
+  }
+}
+
+// Circle buttons
+.btn-icon  {
+  width:34px;
+  border-radius: 50%;
+  border: 1px solid @gray !important;
+  color: @gray !important;
+  background: white !important;
+  .text-center;
+  margin-left: 5px;
+  margin-right: 0;
+  i   {
+    padding: 0 !important;
+  }
+  &:hover {
+    border: 1px solid @brand-info !important;
+    color: @brand-info !important;
+    box-shadow: 0 0 0 2px @brand-info !important;
+  }
+  &.danger  {
+    &:hover {
+      color: @brand-danger !important;
+      border: 1px solid @brand-danger !important;
+      box-shadow: 0 0 0 2px @brand-danger !important;
+    }
+  }
+  &.success, &.btn-star  {
+    &:hover {
+      color: @brand-success !important;
+      border: 1px solid @brand-success !important;
+      box-shadow: 0 0 0 2px @brand-success !important;
+    }
+  }
+  &.info  {
+    &:hover {
+      color: @brand-info !important;
+      border: 1px solid @brand-info !important;
+      box-shadow: 0 0 0 2px @brand-info !important;
+    }
+  }
+  &.warning  {
+    &:hover {
+      color: @brand-warning !important;
+      border: 1px solid @brand-warning !important;
+      box-shadow: 0 0 0 2px @brand-warning !important;
+    }
+  }
+  &.disabled {
+    border: 1px solid @gray !important;
+    color: @gray !important;
+    background: white !important;
+    &:hover   {
+      box-shadow: none !important;
+    }
+  }
+  &.on  {
+    color: @brand-primary !important;
+    border: 1px solid @brand-primary !important;
+    box-shadow: 0 0 0 2px @brand-primary !important;
+    &:hover {
+      color: @brand-primary !important;
+      border: 1px solid @brand-primary !important;
+      background: transparent !important !important;
+    }
+    &.btn-star  {
+      color: white !important;
+      background: @brand-primary !important;
+      border: 1px solid @brand-primary !important;
+      box-shadow: none !important;
+    }
+  }
+  &.btn-star {
+    i {
+      font-size: 15px;
+      position: relative;
+      left: 0;
+      top: 1px;
+    }
+  }
+}
+.btn-icon-group {
+  margin-right: 0;
+  .btn-icon {
+    margin-left: 5px !important;
+    border-radius: 50% !important;
+  }
+}
+
+// Homepage paginator
+.paginate {
+  float: right;
+  .paginate-position  {
+    .text-center;
+    position: relative;
+    top:2px;
+  }
+  .btn   {
+    background: transparent;
+  }
+}
+.item-count   {
+  float:left;
+  margin-right: 30px !important;
+}
+.item-type   {
+  float:left;
+  margin-right: 40px !important;
+}
+
+.btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
+  i {
+    color: white;
+    padding-right: 5px;
+  }
+}
+
+// Disabled buttons
+&.disabled,
+&[disabled],
+fieldset[disabled] & {
+  opacity: 0.5 !important;
+  &:hover {
+    opacity: 0.5 !important;
+  }
+}
+
+.btn-lg, .btn-sm, .btn-xs {
+  border-radius: @border-radius-base;
+}
+
+.btn-default  {
+  &:hover {
+    background-color: darken(@gray-light, 5%);
+    border-color: darken(@gray-light, 5%);
+  }
+  &:focus {
+    background-color: darken(@gray-light, 5%);
+    border-color: darken(@gray-light, 5%);
+  }
+}
+
+.btn-link {
+  &:hover, &:focus, &:active, &.active {
+    background: transparent;
+    border-color: transparent;
+    color: @link-color;
+  }
+  &.disabled  {
+    &:hover   {
+      text-decoration: none;
+    }
+  }
+}
+h1 .btn  {
+  font-family: @font-family-base;
+  padding-left: 0;
+  padding-right:0;
+  padding-bottom: 0;
+  padding-top: 0;
+  i {
+    padding-right: 5px;
+  }
+}
+
+.btn-ghost  {
+  color: @text-color;
+  background: RGBa(0,0,0,0.05);
+  border: 1px solid RGBa(0,0,0,0.005);
+  &:hover {
+    background: RGBa(0,0,0,0.1);
+    border: 1px solid RGBa(0,0,0,0.005)!important;
+  }
+  &:active, &.active {
+    background: RGBa(0,0,0,0.25);
+    border: 1px solid RGBa(0,0,0,0.005) !important;
+  }
+  &:focus {
+    background: RGBa(0,0,0,0.1);
+    border: 1px solid RGBa(0,0,0,0.005) !important;
+  }
+  &.disabled, &[disabled] {
+    color: @text-color;
+    background: RGBa(0,0,0,0.05);
+    border: 1px solid RGBa(0,0,0,0.005);
+    &:hover {
+      color: @text-color;
+      background: RGBa(0,0,0,0.05);
+      border: 1px solid RGBa(0,0,0,0.005);
+    }
+  }
+  i   {
+    padding-right: 5px;
+  }
+}
+
+.btn-stroke  {
+  color: @text-muted;
+  background: transparent;
+  border: 1px solid @text-muted;
+  &:hover {
+    color: @brand-primary;
+    background: transparent;
+    border: 1px solid @brand-primary;
+    box-shadow: 0 0 0 2px @brand-primary;
+  }
+  &:active, &.active {
+    color: darken(@brand-primary, 20%) !important;
+    border: 1px solid darken(@brand-primary, 20%) !important;
+  }
+  &:focus {
+    color: darken(@brand-primary, 10%);
+    border: 1px solid darken(@brand-primary, 10%) !important;
+  }
+  &.disabled, &[disabled] {
+    color: @text-muted;
+    border: 1px solid @text-muted;
+    &:hover {
+      color: @text-muted;
+      border: 1px solid @text-muted;
+      box-shadow: none !important;
+    }
+  }
+  i   {
+    padding-right: 5px;
+  }
+}
+
+// Buttons
+.btn:active, .btn.active, a:active, a.active {
+  box-shadow: none !important;
+  outline: none !important;
+  //border-color: transparent !important;
+}
+.btn:focus  {
+  outline: none;
+}
+.btn, a  {
+  .transition;
+}
+.btn  {
+  font-weight: bold;
+  text-rendering: geometricPrecision;
+}
+
+.btn-group.open .dropdown-toggle:focus {
+  box-shadow: none;
+  background:darken(@gray-lighter, 5%);
+  border-color: darken(@gray-lighter, 5%);
+}
+.btn-group .btn  {
+  margin-right: 1px;
+  margin-left:0;
+  +.btn {
+    margin-left:0;
+  }
+  &:last-of-type  {
+    margin-right:0;
+  }
+}
+
+// Approve document button
+.approval-controls  {
+  display: block;
+  margin-top: 10px;
+  border-top:1px solid darken(@table-border-color, 5%);
+  label.btn {
+    padding: 0;
+  }
+}

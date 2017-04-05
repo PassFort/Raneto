@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{config.locale}}">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{#meta.title}}{{meta.title}} - {{/meta.title}}{{config.site_title}}</title>
+  {{#meta.description}}<meta name="description" content="{{meta.description}}">{{/meta.description}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{config.base_url}}/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{config.base_url}}/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{config.base_url}}/favicon-16x16.png">
+
+  <link rel="stylesheet" href="{{config.base_url}}/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="{{config.base_url}}/lib/highlightjs/styles/solarized_light.css">
+
+  <link href="{{config.base_url}}/fonts/harboro-sans.css" rel="stylesheet">
+  <link href="{{config.base_url}}/fonts/hurme-geometric-sans.css" rel="stylesheet">
+  <link href="{{config.base_url}}/fonts/font-awesome.css" rel="stylesheet">
+
+  {{#config.rtl_layout}}
+  {{/config.rtl_layout}}
+  {{{config.analytics}}}
+
+</head>
+<body class="{{body_class}}">
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <nav role="navigation" class="navbar">
+      <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="{{config.base_url}}/" class="navbar-brand">{{config.site_title}}</a>
+          </div>
+          <div class="navbar-content">
+            <div class="nav navbar-nav navbar-main">
+              <span>Help Centre</span>
+            </div>
+            <form class="navbar-right navbar-form navbar-form-header" action="{{config.base_url}}/">
+              <div class="form-group">
+                <label class="sr-only" for="search">{{lang.global.search}}</label>
+                <input type="search" class="form-control" name="search" id="search" value="{{search}}" placeholder="{{lang.global.search}} the help centre"><button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i><span>{{lang.global.search}}</span></button>
+              </div>
+            </form>
+            <div class="nav navbar-nav navbar-right navbar-secondary">
+              <a href="mailto:support@passfort.com" class="btn btn-primary">Contact us</a>
+            </div>
+          </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BEGIN MAIN CONTENT -->
+  <div role="main" id="main">
+    {{{yield}}}
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer ">
+    <div class="container-fluid">
+      <ul class="list-inline">
+        <li><a href="/">Support Home</a></li>
+        <li><a href="http://identity.passfort.com">PassFort Identity</a></li>
+        <li><a href="http://passfort.com">PassFort.com</a></li>
+        <li><a href="mailto:support@passfort.com">Contact us</a></li>
+      </ul>
+      {{#config.copyright}}
+        <p class="copyright">{{{config.copyright}}}</p>
+      {{/config.copyright}}
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="{{config.base_url}}/lib/jquery/dist/jquery.min.js"></script>
+  <script src="{{config.base_url}}/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="{{config.base_url}}/lib/highlightjs/highlight.pack.min.js"></script>
+  <script src="{{config.base_url}}/lib/fitvids/fitvids.min.js"></script>
+  <script src="{{config.base_url}}/scripts/ghostdown.js"></script>
+  <script src="{{config.base_url}}/scripts/raneto.js"></script>
+
+</body>
+</html>
