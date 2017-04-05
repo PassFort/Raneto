@@ -4,7 +4,7 @@
 var config = {
 
   // Your site title (format: page_title - site_title)
-  site_title: 'Raneto Docs',
+  site_title: 'PassFort Help Centre',
 
   // The base URL of your site (can use %base_url% in Markdown files)
   base_url: '',
@@ -13,7 +13,7 @@ var config = {
   support_email: '',
 
   // Footer Text / Copyright
-  copyright: 'Copyright &copy; '+ new Date().getFullYear() +' - <a href="http://raneto.com">Powered by Raneto</a>',
+  copyright: 'Copyright &copy; '+ new Date().getFullYear() +' - PassFort Ltd',
 
   // Excerpt length (used in search)
   excerpt_length: 400,
@@ -28,7 +28,7 @@ var config = {
 
   // Which Theme to Use?
   theme_dir  : __dirname + '/../themes/',
-  theme_name : 'default',
+  theme_name : 'passfort',
 
   // Specify the path of your content folder where all your '.md' files are located
   // Fix: Needs trailing slash for now!
